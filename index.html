@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="auto">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,12 +11,10 @@
     --border:#222225; --accent:#5b8cff; --accent-2:#2fd4a7; --chip:#17181b;
     --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 30px rgba(0,0,0,.35);
   }
-  @media (prefers-color-scheme: light){
-    :root[data-theme="auto"]{
-      --bg:#f6f7f9; --surface:#fff; --surface-2:#f0f2f5; --text:#17202e; --muted:#5b6676;
-      --border:#e6e9ee; --accent:#1f6feb; --accent-2:#0ca678; --chip:#eef1f5;
-      --shadow:0 1px 2px rgba(16,24,40,.06),0 10px 30px rgba(16,24,40,.07);
-    }
+  :root[data-theme="light"]{
+    --bg:#f6f7f9; --surface:#fff; --surface-2:#f0f2f5; --text:#17202e; --muted:#5b6676;
+    --border:#e6e9ee; --accent:#1f6feb; --accent-2:#0ca678; --chip:#eef1f5;
+    --shadow:0 1px 2px rgba(16,24,40,.06),0 10px 30px rgba(16,24,40,.07);
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
