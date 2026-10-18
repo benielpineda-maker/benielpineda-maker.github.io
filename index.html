@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Beniel John Maynard Pineda — Data Engineer / AI Engineer</title>
 <meta name="description" content="Portfolio of Beniel John Maynard Pineda — Data Engineer / AI Engineer. Medallion data pipelines, n8n automation, Cloudflare, and analytics dashboards." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://benielpineda-maker.github.io/" />
+<meta property="og:title" content="Beniel John Maynard Pineda — Data Engineer / AI Engineer" />
+<meta property="og:description" content="Portfolio: medallion data pipelines, n8n automation, Cloudflare, and analytics dashboards — with live demos and source." />
+<meta property="og:image" content="https://benielpineda-maker.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Beniel John Maynard Pineda — Data Engineer / AI Engineer" />
+<meta name="twitter:description" content="Data pipelines, n8n automation & analytics dashboards. Live demos and source." />
+<meta name="twitter:image" content="https://benielpineda-maker.github.io/og-image.png" />
 <style>
   :root{
     --bg:#0a0a0a; --surface:#121214; --surface-2:#17181b; --text:#ededed; --muted:#9a9a9a;
@@ -47,6 +58,17 @@
   .skillcard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
   .skillcard h3{margin:0 0 8px;font-size:14px}
   .skillcard p{margin:0;color:var(--muted);font-size:14px}
+
+  /* automations showcase */
+  .autogrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .autocard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+  .autocard h3{margin:0 0 12px;font-size:13px;color:var(--accent-2);text-transform:uppercase;letter-spacing:.5px}
+  .autolist{list-style:none;margin:0;padding:0}
+  .autolist li{padding:7px 0;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+  .autolist li:first-child{border-top:0}
+  .autolist b{color:var(--text);font-weight:600}
+  .count{color:var(--muted);font-weight:400;font-size:15px}
+  @media (max-width:640px){.autogrid{grid-template-columns:1fr}}
 
   /* projects */
   .project{display:grid;grid-template-columns:1fr;gap:0;background:var(--surface);border:1px solid var(--border);
@@ -160,6 +182,51 @@
         </div>
       </div>
     </article>
+  </section>
+
+  <section id="automations">
+    <h2>Selected Automations <span class="count">— 15 of 200+ built in n8n</span></h2>
+    <div class="autogrid">
+      <article class="autocard">
+        <h3>AI &amp; Intelligence</h3>
+        <ul class="autolist">
+          <li><b>AI Résumé Intake &amp; Scoring</b> — parses inbound résumés and ranks candidates against role criteria.</li>
+          <li><b>Transcript RAG Assistant</b> — ingests call transcripts into a vector store; a chat agent answers questions in Google Chat.</li>
+          <li><b>AI Call-Coaching Engine</b> — turns sales-call transcripts into structured coaching feedback and weekly digests.</li>
+          <li><b>Competitive Intelligence Researcher</b> — two AI agents research competitors' reviews, pricing, and search ranking.</li>
+          <li><b>AI Error Detector</b> — monitors other workflows and flags failures automatically.</li>
+          <li><b>SOP Analyzer</b> — AI reads SOP documents and generates training material and insights.</li>
+        </ul>
+      </article>
+      <article class="autocard">
+        <h3>Data Pipelines &amp; Sync</h3>
+        <ul class="autolist">
+          <li><b>Daily Lead Enrichment Pipeline</b> — enriches leads across GA4, CRM, and Cloudflare D1 (medallion-style).</li>
+          <li><b>Multi-Source Lead Deduplicator</b> — merges and de-duplicates leads across platforms and a D1 warehouse.</li>
+          <li><b>Ad-Platform → Warehouse Sync</b> — nightly sync of Google Ads, GA4, and LSA data into Cloudflare D1.</li>
+          <li><b>Call-Logs → Warehouse Sync</b> — post-call data piped into D1 for attribution and reporting.</li>
+        </ul>
+      </article>
+      <article class="autocard">
+        <h3>CRM &amp; Lead Integrations</h3>
+        <ul class="autolist">
+          <li><b>Multi-Channel Lead Intake → CRM</b> — Facebook, Yelp, Angi, Thumbtack &amp; web forms into CRM contacts/deals with dedupe.</li>
+          <li><b>GCLID Deal Attribution</b> — ties ad click IDs to CRM deals for closed-loop attribution.</li>
+        </ul>
+      </article>
+      <article class="autocard">
+        <h3>Reporting, Dashboards &amp; Ops</h3>
+        <ul class="autolist">
+          <li><b>Executive KPI Dashboard</b> — company-wide KPI dashboard on Cloudflare.</li>
+          <li><b>Automated Marketing Reports</b> — weekly/monthly cross-platform lead &amp; revenue reports to email and chat.</li>
+          <li><b>Stack Health Monitor</b> — watches integrations (Cloudflare, CRM, field-ops tools) and alerts on failures.</li>
+        </ul>
+      </article>
+    </div>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">
+      Built and maintained <b style="color:var(--text)">200+ production n8n workflows</b> across AI, data pipelines, CRM integrations, and reporting for a multi-brand home-services company. Two sanitized, importable examples are in the
+      <a href="https://github.com/benielpineda-maker/n8n-workflows" target="_blank" rel="noopener">n8n-workflows repo</a>.
+    </p>
   </section>
 
   <section id="experience">
