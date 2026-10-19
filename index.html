@@ -141,6 +141,22 @@
     <h2>Projects</h2>
 
     <article class="project">
+      <img class="preview" src="rag-architecture.png" alt="RAG Transcript Assistant — architecture: one ingestion workflow writing to a Qdrant vector store, three query surfaces reading from it" loading="lazy" />
+      <div class="body">
+        <span class="tag">AI · RAG · n8n + Qdrant + Gemini</span>
+        <h3>RAG Transcript Assistant</h3>
+        <p>A four-part Retrieval-Augmented Generation system that turns a folder of call transcripts
+          into a searchable knowledge base, then answers questions about it in plain language — from a
+          web app or from Google Chat. Transcripts are chunked with overlap, embedded, and stored in
+          Qdrant with metadata, so every answer is grounded in real source material and traceable back
+          to the file it came from. One ingestion workflow writes; three query surfaces read.</p>
+        <div class="links">
+          <a class="btn primary" href="https://github.com/benielpineda-maker/n8n-workflows/tree/main/rag-transcript-assistant" target="_blank" rel="noopener">Source &amp; docs</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
       <img class="preview" src="dashboard-preview.png" alt="Marketing analytics dashboard preview" loading="lazy" />
       <div class="body">
         <span class="tag">Dashboard · HTML/CSS/JS</span>
@@ -173,10 +189,10 @@
       <div class="body">
         <span class="tag">Automation · n8n</span>
         <h3>n8n Automations</h3>
-        <p>Workflow automations built in n8n — importable JSON with write-ups: a two-agent AI
-          competitive-intelligence researcher, an AI résumé-intake &amp; scoring pipeline (retrieve →
-          archive → AI score → log, with fallbacks and dedupe), and an order-reporting pipeline
-          (fetch → merge → summarize → CSV/Discord/upload).</p>
+        <p>Workflow automations built in n8n — importable JSON with write-ups: the RAG transcript
+          assistant above, a two-agent AI competitive-intelligence researcher, an AI résumé-intake
+          &amp; scoring pipeline (retrieve → archive → AI score → log, with fallbacks and dedupe),
+          and an order-reporting pipeline (fetch → merge → summarize → CSV/Discord/upload).</p>
         <div class="links">
           <a class="btn primary" href="https://github.com/benielpineda-maker/n8n-workflows" target="_blank" rel="noopener">Source &amp; docs</a>
         </div>
@@ -191,7 +207,7 @@
         <h3>AI &amp; Intelligence</h3>
         <ul class="autolist">
           <li><b>AI Résumé Intake &amp; Scoring</b> — parses inbound résumés and ranks candidates against role criteria.</li>
-          <li><b>Transcript RAG Assistant</b> — ingests call transcripts into a vector store; a chat agent answers questions in Google Chat.</li>
+          <li><b>Transcript RAG Assistant</b> — ingests call transcripts into a vector store; a chat agent answers questions in Google Chat. <a href="https://github.com/benielpineda-maker/n8n-workflows/tree/main/rag-transcript-assistant" target="_blank" rel="noopener">Published →</a></li>
           <li><b>AI Call-Coaching Engine</b> — turns sales-call transcripts into structured coaching feedback and weekly digests.</li>
           <li><b>Competitive Intelligence Researcher</b> — two AI agents research competitors' reviews, pricing, and search ranking.</li>
           <li><b>AI Error Detector</b> — monitors other workflows and flags failures automatically.</li>
