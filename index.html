@@ -54,6 +54,16 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
   .chip{background:var(--chip);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--text)}
 
+  /* stats strip */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:16px 16px 15px;box-shadow:var(--shadow)}
+  .stat .n{font-size:30px;line-height:1.05;font-weight:800;letter-spacing:-1px;color:var(--accent-2);
+    display:block;margin-bottom:5px}
+  .stat .l{font-size:13px;color:var(--muted);line-height:1.45;display:block}
+  @media (max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:380px){.stats{grid-template-columns:1fr}}
+
   /* skills */
   .skillgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   .skillcard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
@@ -158,6 +168,25 @@
       <span class="chip">n8n</span><span class="chip">Cloudflare Workers</span><span class="chip">D1 · R2</span>
       <span class="chip">HubSpot</span><span class="chip">GA4</span><span class="chip">SQL</span>
       <span class="chip">TypeScript</span><span class="chip">OpenAI API</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="n">15+</span>
+        <span class="l">Production n8n workflows built and maintained</span>
+      </div>
+      <div class="stat">
+        <span class="n">4</span>
+        <span class="l">Workflows in the RAG system alone</span>
+      </div>
+      <div class="stat">
+        <span class="n">3</span>
+        <span class="l">AI agent systems shipped to production</span>
+      </div>
+      <div class="stat">
+        <span class="n">67</span>
+        <span class="l">Nodes in the largest single workflow</span>
+      </div>
     </div>
   </header>
 
