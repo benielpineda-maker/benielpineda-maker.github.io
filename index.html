@@ -36,6 +36,7 @@
   .wrap{max-width:900px;margin:0 auto;padding:0 20px}
   section{padding:46px 0;border-top:1px solid var(--border)}
   h2{font-size:20px;margin:0 0 20px;letter-spacing:-.3px}
+  .lead{color:var(--muted);margin:-10px 0 22px;max-width:660px}
 
   /* hero */
   .hero{padding:72px 0 50px;border:0}
@@ -59,6 +60,17 @@
   .skillcard h3{margin:0 0 8px;font-size:14px}
   .skillcard p{margin:0;color:var(--muted);font-size:14px}
 
+  /* how I work */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .step{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 16px 18px;box-shadow:var(--shadow);position:relative}
+  .step .num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;
+    background:var(--accent-2);color:#06231a;font-weight:800;font-size:13px;margin-bottom:10px}
+  :root[data-theme="light"] .step .num{color:#fff}
+  .step h3{margin:0 0 6px;font-size:14.5px}
+  .step p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55}
+  @media (max-width:760px){.steps{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:430px){.steps{grid-template-columns:1fr}}
+
   /* automations showcase */
   .autogrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   .autocard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
@@ -74,11 +86,40 @@
   .project{display:grid;grid-template-columns:1fr;gap:0;background:var(--surface);border:1px solid var(--border);
     border-radius:16px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:22px}
   .project .body{padding:22px}
-  .project h3{margin:0 0 8px;font-size:18px}
+  .project h3{margin:0 0 12px;font-size:18px}
   .project p{margin:0 0 14px;color:var(--muted)}
   .project .links{display:flex;flex-wrap:wrap;gap:10px}
   .project .preview{background:var(--surface-2);border-bottom:1px solid var(--border);display:block;width:100%}
   .tag{font-size:12px;color:var(--accent-2);font-weight:600}
+
+  /* problem / solution / result */
+  .psr{margin:0 0 16px;display:grid;gap:11px}
+  .psr div{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start}
+  .psr dt{font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;
+    padding:3px 0 0;color:var(--muted)}
+  .psr .p dt{color:#e5736b}
+  .psr .s dt{color:var(--accent)}
+  .psr .r dt{color:var(--accent-2)}
+  .psr dd{margin:0;font-size:14.5px;color:var(--muted);line-height:1.6}
+  .psr .r dd{color:var(--text)}
+  @media (max-width:560px){
+    .psr div{grid-template-columns:1fr;gap:2px}
+    .psr dd{margin-bottom:4px}
+  }
+
+  /* build notes */
+  .notes{display:grid;gap:12px}
+  .note{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);
+    border-radius:12px;padding:14px 18px;box-shadow:var(--shadow)}
+  .note h3{margin:0 0 5px;font-size:14.5px}
+  .note p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+
+  /* audit CTA band */
+  .band{background:linear-gradient(135deg,rgba(47,212,167,.10),rgba(91,140,255,.10));
+    border:1px solid var(--border);border-radius:16px;padding:26px 26px 24px;box-shadow:var(--shadow)}
+  .band h2{margin:0 0 8px;font-size:21px}
+  .band p{margin:0 0 16px;color:var(--muted);max-width:620px}
+  .band .small{font-size:13px;margin:14px 0 0}
 
   /* experience */
   .job{margin-bottom:20px}
@@ -108,6 +149,7 @@
       (Bronze → Silver → Gold) approach to data — deployed on Cloudflare Workers, D1, and R2.</p>
     <div class="cta">
       <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn" href="#audit">Free automation audit</a>
       <a class="btn" href="Beniel_John_Maynard_Pineda_Resume.pdf" target="_blank">Download résumé (PDF)</a>
       <a class="btn" href="https://github.com/benielpineda-maker" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="https://www.linkedin.com/in/beniel-pineda-8b5896444/" target="_blank" rel="noopener">LinkedIn</a>
@@ -137,6 +179,34 @@
     </div>
   </section>
 
+  <section id="process">
+    <h2>How I work</h2>
+    <p class="lead">Automation fails when it's handed over as a black box. Every build follows the same
+      four steps, so you know what it does and your team can keep it running.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="num">1</span>
+        <h3>Map the process</h3>
+        <p>We walk through what you do by hand today, step by step, and agree on what "working" means before anything gets built.</p>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <h3>Build &amp; test</h3>
+        <p>Built in n8n against test data first, with error handling, retry logic, and duplicate guards included — not bolted on later.</p>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <h3>Hand over properly</h3>
+        <p>A recorded walkthrough and written notes, so the workflow is maintainable by your team rather than only by me.</p>
+      </div>
+      <div class="step">
+        <span class="num">4</span>
+        <h3>Support after launch</h3>
+        <p>APIs change and edge cases surface in week two. I stay available to fix what the real world breaks.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="projects">
     <h2>Projects</h2>
 
@@ -145,11 +215,11 @@
       <div class="body">
         <span class="tag">AI · RAG · n8n + Qdrant + Gemini</span>
         <h3>RAG Transcript Assistant</h3>
-        <p>A four-part Retrieval-Augmented Generation system that turns a folder of call transcripts
-          into a searchable knowledge base, then answers questions about it in plain language — from a
-          web app or from Google Chat. Transcripts are chunked with overlap, embedded, and stored in
-          Qdrant with metadata, so every answer is grounded in real source material and traceable back
-          to the file it came from. One ingestion workflow writes; three query surfaces read.</p>
+        <dl class="psr">
+          <div class="p"><dt>Problem</dt><dd>Hundreds of call transcripts sat in a Drive folder nobody read. Finding out whether three customers complained about the same thing meant opening thirty documents — and a general chatbot couldn't help, because it had never seen them.</dd></div>
+          <div class="s"><dt>Approach</dt><dd>Transcripts are chunked with overlap, embedded, and stored in a Qdrant vector store with metadata on every chunk. One ingestion workflow writes; three query surfaces read — a secured web API, a document-listing endpoint, and a Google Chat bot.</dd></div>
+          <div class="r"><dt>Result</dt><dd>The team asks questions in plain language and gets answers grounded in the actual transcripts, each traceable back to its source file — with the model required to say so when it finds nothing relevant.</dd></div>
+        </dl>
         <div class="links">
           <a class="btn primary" href="https://github.com/benielpineda-maker/n8n-workflows/tree/main/rag-transcript-assistant" target="_blank" rel="noopener">Source &amp; docs</a>
         </div>
@@ -161,8 +231,11 @@
       <div class="body">
         <span class="tag">Dashboard · HTML/CSS/JS</span>
         <h3>Marketing Analytics Dashboard</h3>
-        <p>A dependency-free dashboard that renders KPIs, channel performance, trends, and brand revenue
-          from a published metrics file — the kind a medallion pipeline produces. Synthetic data; light/dark themes.</p>
+        <dl class="psr">
+          <div class="p"><dt>Problem</dt><dd>Performance lived in three platforms with different date ranges, naming conventions, and metric definitions. The weekly summary was exported, pasted, and reconciled by hand — and was stale by the time it was finished.</dd></div>
+          <div class="s"><dt>Approach</dt><dd>A dependency-free dashboard rendering KPIs, channel performance, trends, and brand revenue from a single published metrics file — the kind a medallion pipeline produces. Light and dark themes; synthetic data in the demo.</dd></div>
+          <div class="r"><dt>Result</dt><dd>One view, refreshed automatically, with consistent definitions across every source — so the numbers on screen match the numbers in the platforms they came from.</dd></div>
+        </dl>
         <div class="links">
           <a class="btn primary" href="https://benielpineda-maker.github.io/marketing-dashboard-demo/" target="_blank" rel="noopener">Live demo</a>
           <a class="btn" href="https://github.com/benielpineda-maker/marketing-dashboard-demo" target="_blank" rel="noopener">Source</a>
@@ -174,9 +247,11 @@
       <div class="body">
         <span class="tag">Data pipeline · Cloudflare + SQL + TypeScript</span>
         <h3>Medallion Marketing Data Pipeline</h3>
-        <p>An end-to-end Bronze → Silver → Gold pipeline: pluggable extractors land raw data in R2,
-          SQL conforms it into a D1 warehouse, and Gold views expose clean marts for reporting.
-          Serverless, scheduled, and idempotent.</p>
+        <dl class="psr">
+          <div class="p"><dt>Problem</dt><dd>Raw data arrived from several sources in different shapes, and re-running an import duplicated records. With no separation between raw and reporting data, one bad load corrupted the numbers everyone relied on.</dd></div>
+          <div class="s"><dt>Approach</dt><dd>Bronze → Silver → Gold on Cloudflare: pluggable extractors land raw data in R2 untouched, SQL conforms it into a D1 warehouse, and Gold views expose clean marts. Serverless, scheduled, and idempotent by design.</dd></div>
+          <div class="r"><dt>Result</dt><dd>Reporting reads from a stable Gold layer, loads can be safely re-run, and bad source data can be corrected and replayed from Bronze without rebuilding the pipeline.</dd></div>
+        </dl>
         <div class="links">
           <a class="btn primary" href="https://github.com/benielpineda-maker/medallion-pipeline-demo" target="_blank" rel="noopener">Source &amp; docs</a>
         </div>
@@ -189,15 +264,66 @@
       <div class="body">
         <span class="tag">Automation · n8n</span>
         <h3>n8n Automations</h3>
-        <p>Workflow automations built in n8n — importable JSON with write-ups: the RAG transcript
-          assistant above, a two-agent AI competitive-intelligence researcher, an AI résumé-intake
-          &amp; scoring pipeline (retrieve → archive → AI score → log, with fallbacks and dedupe),
-          and an order-reporting pipeline (fetch → merge → summarize → CSV/Discord/upload).</p>
+        <dl class="psr">
+          <div class="p"><dt>Problem</dt><dd>Recurring operational work — researching competitors, screening inbound résumés, assembling order reports — consumed hours of manual effort every week and was done inconsistently.</dd></div>
+          <div class="s"><dt>Approach</dt><dd>Importable, documented n8n workflows: a two-agent AI competitive-intelligence researcher, an AI résumé-intake and scoring pipeline (retrieve → archive → score → log, with two fallbacks and a dedupe guard), and an order-reporting pipeline (fetch → merge → summarize → CSV/Discord/upload).</dd></div>
+          <div class="r"><dt>Result</dt><dd>Each runs on a schedule without supervision, and every workflow in the repo can be imported, connected to your own accounts, and run as-is.</dd></div>
+        </dl>
         <div class="links">
           <a class="btn primary" href="https://github.com/benielpineda-maker/n8n-workflows" target="_blank" rel="noopener">Source &amp; docs</a>
         </div>
       </div>
     </article>
+  </section>
+
+  <section id="notes">
+    <h2>Build notes</h2>
+    <p class="lead">Decisions from real builds — the things that separate an automation that demos well
+      from one that's still running six months later.</p>
+    <div class="notes">
+      <div class="note">
+        <h3>Chunk overlap is not optional</h3>
+        <p>Splitting transcripts into fixed-size chunks will eventually cut a sentence in half, and whatever
+          was in that sentence becomes unretrievable. 100 characters of overlap costs a little storage and
+          saves answers that would otherwise silently go missing.</p>
+      </div>
+      <div class="note">
+        <h3>Make retrieval mandatory, and "I don't know" allowed</h3>
+        <p>A RAG agent left to its own judgement will sometimes skip the search tool and answer from the base
+          model's general knowledge — confidently, and wrongly. The system prompt has to force the lookup and
+          explicitly permit the agent to report that nothing relevant was found.</p>
+      </div>
+      <div class="note">
+        <h3>Assume every re-run will happen twice</h3>
+        <p>Triggers fire twice, loads get replayed, someone clicks the button again. Every pipeline I build
+          gets a dedupe guard or an idempotent write, because the alternative is discovering duplicate
+          records weeks later in a report nobody trusts any more.</p>
+      </div>
+      <div class="note">
+        <h3>One primary path, two fallbacks</h3>
+        <p>In the résumé-intake workflow the preferred source — a download link — fails often enough to
+          matter. Falling back to the email attachment, then to parsing inline text, is the difference
+          between losing applications and not.</p>
+      </div>
+      <div class="note">
+        <h3>Constrain AI output to a schema</h3>
+        <p>Free-text model output can't be written to a spreadsheet or a database without parsing that breaks
+          the first time the phrasing changes. Forcing a structured JSON response makes the result usable
+          by the next node instead of by a human.</p>
+      </div>
+      <div class="note">
+        <h3>A silent bot reads as a broken bot</h3>
+        <p>Retrieval plus generation takes several seconds. The Google Chat bot posts a placeholder
+          immediately and then edits that same message with the answer — instant feedback, without leaving
+          two messages cluttering the thread.</p>
+      </div>
+      <div class="note">
+        <h3>Design around the free tier before you need to</h3>
+        <p>The competitive-intelligence workflow runs on free-tier LLM and search APIs, which means batching,
+          pacing requests, and handling rate-limit responses as a normal outcome rather than an error. It
+          also means the workflow still works for someone importing it with no budget.</p>
+      </div>
+    </div>
   </section>
 
   <section id="automations">
@@ -245,6 +371,20 @@
     </p>
   </section>
 
+  <section id="audit">
+    <div class="band">
+      <h2>Free automation audit</h2>
+      <p>Tell me one thing your team does by hand every week — pulling a report, copying leads between
+        systems, chasing a spreadsheet. I'll tell you whether it's worth automating, roughly what it
+        would take, and if it isn't worth it, I'll say that too.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:benielpineda@gmail.com?subject=Automation%20audit&amp;body=Here%27s%20the%20process%20my%20team%20does%20manually%3A%0A%0A1.%20What%20happens%20today%2C%20step%20by%20step%3A%0A%0A2.%20Which%20tools%20are%20involved%3A%0A%0A3.%20How%20often%20it%20runs%20and%20roughly%20how%20long%20it%20takes%3A%0A">Send me your process</a>
+        <a class="btn" href="https://www.linkedin.com/in/beniel-pineda-8b5896444/" target="_blank" rel="noopener">Message on LinkedIn</a>
+      </div>
+      <p class="small">No pitch, no obligation — a straight answer either way.</p>
+    </div>
+  </section>
+
   <section id="experience">
     <h2>Experience</h2>
     <div class="job">
@@ -264,7 +404,8 @@
   <footer class="footer">
     <p>Beniel John Maynard Pineda · Philippines ·
       <a href="https://github.com/benielpineda-maker" target="_blank" rel="noopener">GitHub</a> ·
-      <a href="https://www.linkedin.com/in/beniel-pineda-8b5896444/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/beniel-pineda-8b5896444/" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="mailto:benielpineda@gmail.com">benielpineda@gmail.com</a>
     </p>
   </footer>
 </div>
